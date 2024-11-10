@@ -1,5 +1,13 @@
-# Vue 3 + TypeScript + Vite
+# Kanban Board
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A simple and intuitive Kanban Board application built with **Vue 3**, **TypeScript**, and **Vuetify**, powered by **Vite**.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+![Kanban Board Screenshot](./screenshot.png) <!-- (Optional) Add a screenshot to showcase your app -->
+
+## Features
+
+- **Add and Remove Tasks**: Easily manage tasks by adding descriptions, and removing completed tasks.
+- **Customizable Columns**: Organize tasks by stages (e.g., "To Do," "In Progress," "Done") and add columns as needed.
+- **Drag-and-Drop**: Rearrange tasks within and across columns using drag-and-drop functionality.
+- **Persistent State**: Saves the board state in **localStorage** for continued work across sessions.
+
