@@ -9,10 +9,10 @@
             class="d-flex flex-column"
           >
             <v-card class="task-column-card">
-              <v-card-title class="d-flex justify-between align-center">
-                <span>{{ column.name }}</span>
-                <v-btn @click="toggleTaskInput(column)" small class="ml-auto">+</v-btn> <!-- Right-align the button -->
-              </v-card-title>
+                <v-card-title class="d-flex justify-between align-center">
+                  <span class="column-title">{{ column.name }}</span>
+                  <v-btn @click="toggleTaskInput(column)" small class="ml-auto">+</v-btn>
+                </v-card-title>
               <v-card-text>
                 <v-text-field
                   v-if="column.showTaskInput"
@@ -192,5 +192,14 @@
   .new-column-input .v-text-field {
     width: 100%;
   }
+  .column-title {
+  flex-grow: 1; 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  max-width: calc(100% - 40px); 
+}
+
+
   </style>
   
