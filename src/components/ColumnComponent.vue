@@ -1,59 +1,38 @@
 <template>
-  <div class="column">
-    <h2>{{ column.name }}</h2>
-    <ul>
-      <TaskComponent v-for="task in column.tasks" :key="task.id" :task="task"/>
-    </ul>
-    <form @submit.prevent="addTask">
-      <input v-model="newTaskTitle" placeholder="Add task" class="new-task-input"/>
-      <button type="submit">+</button>     
-    </form>
-  </div>
+  <v-card>
+    <v-card-title>{{ column.name }}</v-card-title>
+    <v-card-text>
+      <v-btn @click="addTask">Add Task</v-btn>
+      <v-list>
+        <v-list-item-group v-for="task in column.tasks" :key="task.id">
+          <TaskComponent :task="task" />
+        </v-list-item-group>
+      </v-list>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, ref } from 'vue';
-import type { Column } from '../components/types';
-import TaskComponent from '../components/TaskComponent.vue';
+import { defineComponent } from 'vue';
+import TaskComponent from '../components/TaskComponent.vue';  // Import TaskComponent
 
 export default defineComponent({
   name: 'ColumnComponent',
-  components: {
-    TaskComponent,
-  },
+  components: { TaskComponent },
   props: {
     column: {
-      type: Object as PropType<Column>,
+      type: Object,
       required: true,
     },
   },
   setup(props) {
-    const newTaskTitle = ref('');
-
     const addTask = () => {
-      if (newTaskTitle.value.trim()) {
-        props.column.tasks.push({
-          id: Date.now(),
-          title: newTaskTitle.value,
-        });
-        newTaskTitle.value = '';
-      }
+      props.column.tasks.push({ id: Date.now(), title: 'New Task' });
     };
 
-    return {
-      newTaskTitle,
-      addTask,
-    };
+    return { addTask };
   },
 });
 </script>
 
-<style scoped>
-.column {
-  background-color: #e0e0e0;
-  padding: 16px;
-  border-radius: 8px;
-  width: 200px;
-  margin-right: 16px;
-}
-</style>
+
