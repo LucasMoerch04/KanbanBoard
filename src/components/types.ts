@@ -8,4 +8,4 @@ export interface Column {
     name: string;
     tasks: Task[];
 }
-  
+declare module 'vuedraggable';

@@ -1,28 +1,35 @@
 {
   "name": "kanban-board",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+  "main": "index.js",
   "scripts": {
     "dev": "vite",
+    "test": "vitest",
     "build": "vue-tsc -b && vite build",
-    "preview": "vite preview",
+    "serve": "vite preview",
     "deploy": "vite build && gh-pages -d dist"
-
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^22.10.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vitest": "^2.1.6",
+    "vue": "^3.5.12",
+    "vue-tsc": "^2.1.8"
   },
   "dependencies": {
-    "@mdi/font": "^7.4.47",
-    "gh-pages": "^6.2.0",
-    "sortablejs": "^1.15.3",
-    "vite-plugin-vuetify": "^2.0.4",
-    "vue": "^3.5.12",
     "vuedraggable": "^4.1.0",
-    "vuetify": "^3.7.0-beta.1"
-  },
-  "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.4",
-    "typescript": "~5.6.2",
-    "vite": "^5.4.10",
-    "vue-tsc": "^2.1.8"
+    "vuetify": "^3.7.0-beta.1",
+    "webpack-plugin-vuetify": "^3.0.3"
   }
 }
