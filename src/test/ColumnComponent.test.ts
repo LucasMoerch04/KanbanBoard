@@ -43,11 +43,13 @@ describe('ColumnComponent', () => {
   });
 
   it('adds a task when the Add Task button is clicked', async () => {
+    // Define a column with no tasks initially
     const columnWithTasks = {
       name: 'To Do',
       tasks: [],
     };
 
+    // Render the ColumnComponent with the columnWithTasks prop
     render(ColumnComponent, {
       props: {
         column: columnWithTasks,
@@ -58,10 +60,10 @@ describe('ColumnComponent', () => {
       },
     });
 
-    // Verify no tasks initially
+    // Verify no tasks are present initially
     expect(screen.queryByText('New Task')).not.toBeInTheDocument();
 
-    // Click the Add Task button
+    // Find and click the Add Task button
     const addButton = screen.getByRole('button', { name: 'Add Task' });
     await fireEvent.click(addButton);
 

@@ -12,8 +12,8 @@ export default defineConfig({
       deps: {
         inline: ['vuetify'],
       },
-    },  // Use jsdom for DOM manipulation
-    css: true,             // Allow CSS handling in tests
+    }, 
+    css: true,            
   },
-  plugins: [vue()], // Include vue plugin to handle .vue files
+  plugins: [vue()], 
 });
