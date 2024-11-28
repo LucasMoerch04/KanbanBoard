@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import TaskComponent from '../components/TaskComponent.vue';  // Import TaskComponent
+import TaskComponent from '../components/TaskComponent.vue';  
 
 export default defineComponent({
   name: 'ColumnComponent',

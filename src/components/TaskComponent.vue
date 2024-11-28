@@ -1,32 +1,35 @@
 <template>
-    <v-card
-      class="task-card"
-      :key="task.id"
-      @mouseenter="isHovered = true"
-      @mouseleave="isHovered = false"
+  <v-card
+    class="task-card"
+    :key="task.id"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
+  >
+    <v-card-title>{{ task.title }}</v-card-title>
+
+    <!-- Description, shown only when hovering -->
+    <v-card-subtitle
+      class="task-description"
+      v-if="isHovered"
+      aria-hidden="!isHovered"
     >
-      <v-card-title>{{ task.title }}</v-card-title>
-  
-      <!-- Description, shown only when hovering -->
-      <v-card-subtitle
-        v-if="isHovered"
-        class="task-description"
-      >
-        {{ task.description }}
-      </v-card-subtitle>
-  
-      <!-- Task remove button, shown only when hovering over the card -->
-      <v-btn
-        @click="removeTask"
-        small
-        color="red"
-        class="remove-task-btn"
-        v-if="isHovered"
-      >
-        Remove
-      </v-btn>
-    </v-card>
-  </template>
+      {{ task.description }}
+    </v-card-subtitle>
+
+    <!-- Task remove button, shown only when hovering over the card -->
+    <v-btn
+      @click="removeTask"
+      small
+      color="red"
+      class="remove-task-btn"
+      v-if="isHovered"
+      aria-label="Remove task"
+    >
+      Remove
+    </v-btn>
+  </v-card>
+</template>
+
   
   <script lang="ts">
   import { defineComponent, ref } from 'vue';
