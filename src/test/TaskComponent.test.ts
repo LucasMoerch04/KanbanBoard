@@ -9,8 +9,6 @@ describe('TaskComponent', () => {
     render(TaskComponent, {
       props: { task },
     })
-
-    // Check title is shown
     expect(screen.getByText(task.title)).toBeTruthy()
   })
 
@@ -18,8 +16,6 @@ describe('TaskComponent', () => {
     render(TaskComponent, {
       props: { task },
     })
-
-    // Check desc and remove button are hidden
     expect(screen.queryByText(task.description)).toBeNull()
     expect(screen.queryByRole('button', { name: /remove/i })).toBeNull()
   })
