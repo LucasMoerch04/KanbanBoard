@@ -9,6 +9,7 @@ describe('TaskComponent', () => {
     render(TaskComponent, {
       props: { task },
     })
+    // Check if the task title is displayed
     expect(screen.getByText(task.title)).toBeTruthy()
   })
 
@@ -16,7 +17,9 @@ describe('TaskComponent', () => {
     render(TaskComponent, {
       props: { task },
     })
+    // Check if the task description is not displayed initially
     expect(screen.queryByText(task.description)).toBeNull()
+    // Check if the remove button is not displayed initially
     expect(screen.queryByRole('button', { name: /remove/i })).toBeNull()
   })
 
@@ -31,7 +34,7 @@ describe('TaskComponent', () => {
       await fireEvent.mouseOver(card)
     }
 
-    // Wait for description to appear using findByText to handle dynamic rendering
+    // Wait for description to appear
     await waitFor(() => {
       expect(screen.findByText(task.description)).toBeTruthy()
     })

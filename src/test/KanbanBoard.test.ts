@@ -2,7 +2,7 @@ import { render, fireEvent, screen, waitFor } from '@testing-library/vue';
 import { describe, it, expect } from 'vitest';
 import KanbanBoard from '../components/KanbanBoard.vue';
 import { createVuetify } from 'vuetify';
-import 'vuetify/styles'; // Import Vuetify styles
+import 'vuetify/styles';
 
 const vuetify = createVuetify();
 
@@ -32,7 +32,7 @@ describe('KanbanBoard Component', () => {
     const addButton = screen.getAllByText('+')[0]; // Select the first "+" button
     await fireEvent.click(addButton);
 
-    // Wait for the task input fields to appear (ensure the form is visible)
+    // Wait for the task input fields to appear 
     const taskTitleInput = await screen.findByLabelText('New Task Title');
     const taskDescriptionInput = await screen.findByLabelText('Task Description (Optional)');
     expect(taskTitleInput).toBeInTheDocument();
@@ -45,8 +45,8 @@ describe('KanbanBoard Component', () => {
     const addTaskButton = screen.getByText('Add Task');
     await fireEvent.click(addTaskButton);
 
-    // Verify the task is added to the column
-    // Wait for the task to appear in the document
+    // Check the task is added to column
+    // Wait for  task to appear in  document
     await waitFor(() => expect(screen.getByText('New Task')).toBeInTheDocument());
   });
 });

@@ -14,7 +14,7 @@
               <v-btn @click="toggleTaskInput(column)" small class="ml-auto">+</v-btn>
             </v-card-title>
             <v-card-text>
-              <v-alert v-if="column.errorMessage" type="error" >
+              <v-alert v-if="column.errorMessage" type="error" >   <!-- Error msg when no title input -->
                 {{ column.errorMessage }}
               </v-alert>
               <v-text-field

@@ -14,5 +14,5 @@ export default {
 const app = createApp(App);
 
 
-app.use(vuetify); // Add Vuetify to the app
+app.use(vuetify);
 app.mount('#app');

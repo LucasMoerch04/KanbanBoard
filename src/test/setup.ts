@@ -11,7 +11,7 @@ const vuetify = createVuetify({
     VCardTitle,
     VCardSubtitle,
     VBtn,
-    VRow,  // Add missing components
+    VRow, 
     VCol,
     VTextField,
     VTextarea,
