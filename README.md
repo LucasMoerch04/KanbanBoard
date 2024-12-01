@@ -1,6 +1,6 @@
 # Kanban Board
 
-A simple and intuitive Kanban Board application built with **Vue 3**, **TypeScript**, and **Vuetify**, powered by **Vite**, testing with **Vitest** and **Testing Library**.
+A simple and intuitive Kanban Board application built with **Vue 3**, **TypeScript**, and **Vuetify**, powered by **Vite**, tested with **Vitest** and **Testing Library**.
 
 ![Kanban Board Screenshot](./public/screenshot.png) <!-- (Optional) Add a screenshot to showcase your app -->
 
