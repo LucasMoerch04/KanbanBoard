@@ -1,47 +1,47 @@
-import { render, fireEvent, screen, waitFor } from '@testing-library/vue'
-import TaskComponent from '../components/TaskComponent.vue'
-import { describe, it, expect } from 'vitest'
+import { render, fireEvent, screen, waitFor } from '@testing-library/vue';
+import TaskComponent from '../components/TaskComponent.vue';
+import { describe, it, expect } from 'vitest';
 
 describe('TaskComponent', () => {
-  const task = { id: 1, title: 'Test Task', description: 'Test task desc.' }
+  const task = { id: 1, title: 'Test Task', description: 'Test task desc.' };
 
   it('shows the title', () => {
     render(TaskComponent, {
       props: { task },
-    })
+    });
     // Check if the task title is displayed
     expect(screen.getByText(task.title)).toBeTruthy()
-  })
+  });
 
   it('hides desc and remove button at start', () => {
     render(TaskComponent, {
       props: { task },
-    })
+    });
     // Check if the task description is not displayed initially
-    expect(screen.queryByText(task.description)).toBeNull()
+    expect(screen.queryByText(task.description)).toBeNull();
     // Check if the remove button is not displayed initially
-    expect(screen.queryByRole('button', { name: /remove/i })).toBeNull()
+    expect(screen.queryByRole('button', { name: /remove/i })).toBeNull();
   })
 
   it('shows desc and remove button on hover', async () => {
     render(TaskComponent, {
       props: { task },
-    })
+    });
 
     // Simulate hover over the task card
-    const card = screen.getByText(task.title).closest('.task-card') // Make sure the card has the correct class
+    const card = screen.getByText(task.title).closest('.task-card'); // Make sure the card has the correct class
     if (card !== null) {
-      await fireEvent.mouseOver(card)
+      await fireEvent.mouseOver(card);
     }
 
     // Wait for description to appear
     await waitFor(() => {
-      expect(screen.findByText(task.description)).toBeTruthy()
+      expect(screen.findByText(task.description)).toBeTruthy();
     })
 
     // Wait for remove button to appear
     await waitFor(() => {
-      expect(screen.findByRole('button', { name: /remove/i })).toBeTruthy()
-    })
-  })
-})
+      expect(screen.findByRole('button', { name: /remove/i })).toBeTruthy();
+    });
+  });
+});
