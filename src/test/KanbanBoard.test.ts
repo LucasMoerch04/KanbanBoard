@@ -127,33 +127,4 @@ describe('KanbanBoard Component', () => {
     expect(screen.queryByLabelText('New Column Title')).not.toBeInTheDocument();
   });
 
-  /* This has issues with querying the values before the vue component render, and therefore doesn't work yet.
-  it('allows adding a new task to a column', async () => {
-    render(KanbanBoard, {
-      global: {
-        plugins: [vuetify],
-      },
-    });
-  
-    // Open task input
-    const addButton = screen.getAllByText('+')[0];
-    await fireEvent.click(addButton);
-  
-    // Query the task title input
-    const taskTitleInput = await screen.getByPlaceholderText("New Task Title");
-  
-    // Interact with the input
-    await fireEvent.update(taskTitleInput, 'New Task');
-  
-    // Add the task
-    const addTaskButton = screen.getByText('Add Task');
-    await fireEvent.click(addTaskButton);
-  
-    // Verify task is added
-    await waitFor(() => {
-      expect(screen.getByText('New Task')).toBeInTheDocument();
-    });
-  });
-  */
-
 });
